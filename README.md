@@ -1,0 +1,2 @@
+# Ducky
+Developer's friend
