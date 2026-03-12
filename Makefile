@@ -2,13 +2,13 @@ APP_NAME := ducky
 BIN_DIR := bin
 GO_CMD := go
 BUILD_CMD := $(GO_CMD) build
-BUILD_OPTS := -o
-BUILD_ENVS :=
+BUILD_FLAGS := -o
+BUILD_ENVS := CGO_ENABLED=0
 
 .PHONY: build clean
 
 build: clean
-	$(BUILD_CMD) $(BUILD_OPTS) $(BIN_DIR)/$(APP_NAME)
+	$(BUILD_ENVS) $(BUILD_CMD) $(BUILD_FLAGS) $(BIN_DIR)/$(APP_NAME)
 
 clean:
 	rm -rf $(BIN_DIR)
